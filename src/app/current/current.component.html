@@ -1,0 +1,26 @@
+<div id="actualWeather" class="container-fluid w-50 h-auto">
+    <div class="row">
+        <div class="col-md-6" style="text-align: left;"><h4><strong>{{ meteoCurrent?.name }}</strong></h4></div>
+        <div class="col-md-6" style="text-align: right;"><h2><strong>{{ meteoCurrent?.main.temp | number:"1.0-0" }}</strong> °C</h2></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" style="text-align: center;">
+            <img [src]="iconUrl">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" style="text-align: left;">
+        <h4 style="color:#ec6e4c"><strong>{{ meteoCurrent?.weather[0]?.main }}</strong></h4>
+        <h5>{{ meteoCurrent?.weather[0]?.description }}</h5></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6" style="text-align: left;">
+            <strong>MIN</strong><br>
+            {{ meteoCurrent?.main.temp_min | number:"1.0-0" }} °C
+        </div>
+        <div class="col-md-6" style="text-align: right;">
+            <strong>MAX</strong><br>
+            {{ meteoCurrent?.main.temp_max | number:"1.0-0" }} °C
+        </div>
+    </div>
+</div>

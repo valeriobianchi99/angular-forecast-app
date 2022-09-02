@@ -1,0 +1,6 @@
+<button type="button" (click)="mappa=!mappa">{{ (mappa)?'Hide map':'Show map' }}</button>
+<div class="mapBox" *ngIf="mappa">
+    <agm-map [latitude]="lat" [longitude]="lon">
+        <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
+    </agm-map>
+</div>

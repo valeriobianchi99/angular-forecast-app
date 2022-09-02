@@ -1,0 +1,16 @@
+<div id="otherDaysWeather" class="container-fluid w-50 h-auto">
+    <h6 style="text-align: center; margin-top: -8px;" ><strong>Next days weather</strong></h6>
+    <div class="row container-fluid w-auto h-auto p-auto" *ngFor="let previsione of previsioni">
+        <div class="col-md-2" style="text-align: center;">
+            <strong style="color:white">{{ (previsione.dt*1000) | date: 'E' | uppercase }}</strong>
+        </div>
+        <div class="col-md-2" style="height: auto !important;">
+            <img [src]="previsione.weather[0].icon">
+        </div>
+        <div class="col-md-2"><button class="tempButton"><strong>{{ previsione.temp.day | number:"1.0-0" }} °C</strong></button></div>
+        <div class="col-md-6">
+            <span style="color:#f8f8f8;display:block;">{{ previsione.weather[0].description }}</span>
+            <span style="font-size:10px;"><strong><i>wind {{ previsione.speed }} m/s, clouds {{ previsione.clouds }}%</i></strong></span>
+        </div>
+    </div>
+</div>
